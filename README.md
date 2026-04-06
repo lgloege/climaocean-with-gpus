@@ -55,6 +55,7 @@ I ran these commands to setup `Project.toml` and `LocalPreferences.toml`
 
 7. instantiate so "CUDA_compiler_jll" downloads `julia --project=$PROJECT -e 'using Pkg; Pkg.instantiate()'`
 8. `julia --project=$PROJECT -e 'using MPI; using CUDA; CUDA.precompile_runtime()'`
+9. ` julia --project=$PROJECT -e 'using Pkg; Pkg.add("ClimaOcean"); Pkg.add("Oceananigans"); Pkg.instantiate(); Pkg.precompile()'`
 
 # alltoall test
 
