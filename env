@@ -1,0 +1,31 @@
+
+export JULIA_MPI_HAS_CUDA=true
+export UCX_WARN_UNUSED_ENV_VARS=n
+export UCX_MEMTYPE_CACHE=n
+export UCX_TLS=sm,cuda_copy,cuda_ipc,rc
+
+# this one may not be needed. try removing this one
+export UCX_RNDV_SCHEME=put_zcopy
+
+# some of these may not be needed?
+export OMPI_MCA_pml=ob1
+export OMPI_MCA_btl=self,vader,tcp
+
+export JULIA_CUDA_MEMORY_POOL=none
+export JULIA_DEBUG=CUDA
+export JULIA_DEBUG=CUDA_Runtime_Discovery
+
+INSTANTIATE=false
+
+SIMULATION=/home/ljg48/project_pi_me586/ljg48/multi-gpu-test/simulation.jl
+
+PROJECT=/home/ljg48/project_pi_me586/ljg48/multi-gpu-test/
+
+DEPOT_PATH=/nfs/roberts/scratch/pi_me586/ljg48/julia_depot
+export JULIA_DEPOT_PATH=${DEPOT_PATH}
+
+# I know it is bad practice, but Tom, you can just my ecco credentials
+export ECCO_USERNAME=lukegloege
+export ECCO_WEBDAV_PASSWORD=HgAPxRGHTvhDRJzME9s
+
+#source /home/${USER}/.ecco-env 
