@@ -1,14 +1,22 @@
 # climaocean-with-gpus
 
+In this repository I am trying to run the [1 degree global simulation example](https://clima.github.io/ClimaOceanDocumentation/stable/literated/one_degree_simulation/) on multiple GPUs on the Yale Bouchet cluster
+
+
 Load modules
 ```sh
 module load Julia/1.12.4-linux-x86_64
 module load OpenMPI/5.0.3-GCC-13.3.0-CUDA-12.6.0
 ```
 
-load envionrment variables
+load envionrment variables. **CHECK THESE** I set JULIA_DEPOT_PATH in here
 ```sh
 source ./env
+```
+
+Setup the envionrment from the toml file. PROJECT is set in env file
+```julia
+julia --project=$PROJECT -e 'using Pkg; Pkg.instantiate()'
 ```
 
 run the simulation and save output
@@ -27,6 +35,8 @@ CUDA.versioninfo()
 
 
 ## Some errors I have received
+
+This [GitHub Issue](https://github.com/CliMA/ClimaOcean.jl/issues/634) is very similar to what I am seeing. I have tried upping it to get some traction. 
 
 I use h200 because of this error
 ```sh
