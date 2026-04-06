@@ -56,3 +56,12 @@ I ran these commands to setup `Project.toml` and `LocalPreferences.toml`
 7. instantiate so "CUDA_compiler_jll" downloads `julia --project=$PROJECT -e 'using Pkg; Pkg.instantiate()'`
 8. `julia --project=$PROJECT -e 'using MPI; using CUDA; CUDA.precompile_runtime()'`
 
+# alltoall test
+
+these scripts are from [MPI.jl](https://juliaparallel.org/MPI.jl/stable/usage/)
+
+```
+Successfully running the alltoall_test_cuda.jl should confirm your MPI implementation to have the CUDA support enabled. Moreover, successfully running the alltoall_test_cuda_multigpu.jl should confirm your CUDA-aware MPI implementation to use multiple Nvidia GPUs (one GPU per rank).
+
+If using OpenMPI, the status of CUDA support can be checked via the MPI.has_cuda() function.
+```
